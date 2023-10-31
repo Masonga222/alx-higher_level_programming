@@ -1,9 +1,2 @@
 #!/bin/bash
-
-# Get the filename of the Python script
-filename=$PYFILE
-
-# Compile the Python script and output the bytecode to $filenamec
-python3 -m py_compile "$filename" -o "${filename}c"
-
-echo "Compiling $filename ..."
+python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
